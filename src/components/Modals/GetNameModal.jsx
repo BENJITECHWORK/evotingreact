@@ -60,11 +60,13 @@ const GetNameModal = ({isOpen}) => {
                 type="text"
                 errors={errors.token}
             />
+            <div className="modalContainer">
              <button class='btn btn-primary fw-bolder fs-8'
               className={`primary-btn siguin ${mutation.isPending ? "disabled" : ""}`}
               type="submit">
               {mutation.isPending ? "Verifying ..." : "Verify Token"}
             </button>
+            </div>
           </form>
   
   </Modal>

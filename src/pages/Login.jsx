@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { loginApi } from "../apis/apifunctions/authApi";
 import { notify, errorNotification } from "../Toasts/toasts";
 import { schema } from "../Schemas/authSchema";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import "../App.css";
 import logo from "../assets/logo.jpeg"
 
@@ -49,7 +49,7 @@ const Login = () => {
 
   useEffect(() => {
     if (mutation.isSuccess) {
-       navigate('/vote');
+       navigate('/home/vote');
     }
    }, [mutation.isSuccess, navigate]);
 
@@ -86,6 +86,7 @@ const Login = () => {
             {mutation.isPending ? "Signing In ..." : "Sign In"}
           </button>
         </form>
+        <Link to ="/register">Sign Up</Link>
       </div>
     </div></>
   )

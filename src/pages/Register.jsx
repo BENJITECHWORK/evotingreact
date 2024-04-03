@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { registerApi } from "../apis/apifunctions/authApi";
 import { notify, errorNotification } from "../Toasts/toasts";
 import { registerSchema } from "../Schemas/authSchema";
+import { Link } from 'react-router-dom';
 import "../App.css"
 
 const Register = () => {
@@ -98,6 +99,7 @@ const Register = () => {
                         {mutation.isPending ? "Signing Up ..." : "Sign Up"}
                     </button>
                 </form>
+                <Link to="/">Sign In</Link>
             </div>
         </div>
     )

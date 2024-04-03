@@ -37,7 +37,7 @@ const Register = () => {
         });
     }
     return (
-        <div className="container">
+        <div className="container1">
             <div className="signup">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <header>SignUp</header>

@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import { Routes, Route, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './pages/Login'
-import './App.css'
 import Register from './pages/Register';
+import Voting from './components/voting/Voting';
+import Results from './components/results/Results';
+import "./assets/css/bootstrap.min.css";
+import "./assets/css/style.css";
+
 import Sample from './pages/Sample';
 
 function App() {
@@ -10,22 +14,30 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Login/>
+      element: <Login />
     },
     {
       path: "/register",
-      element: <Register/>
+      element: <Register />
     },
     {
-      path:"/sample",
-      element:<Sample/>    
+      path: "/voting",
+      element: <Voting />
+    },
+    {
+      path: "/result",
+      element: <Results />
+    },
+    {
+      path: "/sample",
+      element: <Sample />
     }
   ]);
-  
-  
+
+
   return (
     <>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </>
   )
 }

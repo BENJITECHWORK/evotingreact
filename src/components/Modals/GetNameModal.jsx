@@ -6,9 +6,12 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { verifyToken } from "../../apis/apifunctions/voteApi";
 import { notify, errorNotification } from "../../Toasts/toasts";
 import { tokenschema } from "../../Schemas/authSchema";
+import { useSelector, useDispatch } from 'react-redux';
+import { setIsEligible } from '../../redux/slices/authSlice';
 import Modal from "../Dialog/Modal";
 
 const GetNameModal = ({isOpen}) => {
+  const dispatch = useDispatch()
   const {
         register,
         handleSubmit,
@@ -29,9 +32,8 @@ const GetNameModal = ({isOpen}) => {
     const user =localStorage.getItem('user')? JSON.parse(localStorage.getItem('user')):null
     mutation.mutate({token:user_data.token, email:user.email}, {
       onSuccess: (data) => {
-        localStorage.setItem('is_eligible',data.is_eligible)
+        dispatch(setIsEligible(false))
         notify(data.message);
-        // window.location.reload()
       },
       onError: (error) => {
         console.log('error', error)
@@ -43,7 +45,7 @@ const GetNameModal = ({isOpen}) => {
   return (
     <Modal
         hasCloseBtn={false}
-        isOpen={true}
+        isOpen={isOpen}
         onClose={()=>{}}
      >
            <form onSubmit={handleSubmit(onSubmit)}>

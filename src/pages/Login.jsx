@@ -37,7 +37,7 @@ const Login = () => {
         localStorage.clear();
         localStorage.setItem("access_token", data.jwt_token);
         localStorage.setItem("user", JSON.stringify(data.user));
-        localStorage.setItem("is_eligible", false);
+        localStorage.setItem("is_eligible", true);
         notify("Login Successful");     
       },
 

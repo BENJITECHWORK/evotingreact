@@ -7,6 +7,10 @@ export const schema = yup.object({
     password: yup.string().matches(PAS_REGX, "Password must contain at least 8 characters, one uppercase, one number and one special case character"),
 }).required()
 
+export const tokenschema = yup.object({
+    token: yup.string().required(),
+}).required()
+
 
 export const emailSchema = yup.object({
     email: yup.string().email().required(),

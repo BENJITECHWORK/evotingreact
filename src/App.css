@@ -1,42 +1,124 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: none;
+}
+
+.container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.login-form >img{
+  height: 90px;
+  width: 80%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  
+}
+
+.container1 .registration {
+  display: none;
+}
+
+#check:checked~.registration {
+  display: block;
+}
+
+#check:checked~.login {
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+.container1 .login-form,
+.container1 .signup {
   padding: 2rem;
+}
+
+.login-form header,
+.signup header {
+  font-size: 2rem;
+  font-weight: 700;
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-form .input,
+.signup .input {
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.login-form .input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card {
-  padding: 2em;
+.login-form a {
+  font-size: 16px;
+  color: #1CA5E8;
+  text-decoration: none;
 }
 
-.read-the-docs {
-  color: #888;
+.form a:hover {
+  text-decoration: underline;
+}
+
+.login-form button,
+.signup button {
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  color: #fff;
+  background: #1CA5E8;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  /* margin-top: 1.2rem; */
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.login-form button:hover {
+  background: #1CA5E8;
+}
+
+.signup {
+  font-size: 17px;
+  /* text-align: center; */
+}
+
+.signup label:hover {
+  text-decoration: underline;
 }

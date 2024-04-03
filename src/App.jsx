@@ -7,32 +7,37 @@ import Results from './components/results/Results';
 import "./assets/css/bootstrap.min.css";
 import "./assets/css/style.css";
 
+import Sample from './pages/Sample';
 
 function App() {
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Login/>
+      element: <Login />
     },
     {
       path: "/register",
-      element: <Register/>
+      element: <Register />
     },
     {
       path: "/voting",
-      element: <Voting/>
+      element: <Voting />
     },
     {
       path: "/result",
-      element: <Results/>
+      element: <Results />
     },
+    {
+      path: "/sample",
+      element: <Sample />
+    }
   ]);
-  
-  
+
+
   return (
     <>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </>
   )
 }

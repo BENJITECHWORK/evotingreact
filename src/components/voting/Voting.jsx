@@ -26,7 +26,7 @@ function Voting() {
                 </div>
                  <div class="col-lg-4 col-md-6">
                     <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
-                        <img class="rounded-pill shadow-md p-2" src="assets/images/testimonial/member-02.jpg" alt="" />
+                        <img class="rounded-pill shadow-md p-2" src={Member1} alt="" />
                         <h4 class="mt-3 fs-5 mb-1 fw-bold">Arun Kumar</h4>
                         <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">President</span></h6>
                         <p class="text-dark mt-3 mb-3 fs-8">Aliquam utrum nibh rutrum nibh vitae tortor dapibus egestas. Cras condimentum dapibus tellus vel semper. Quisque vel dui molestie est auctor utrum nibh porttitor.</p>

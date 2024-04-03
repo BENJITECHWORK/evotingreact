@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import { Routes, Route, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './pages/Login'
-import './App.css'
 import Register from './pages/Register';
+import Voting from './components/voting/Voting';
+import Results from './components/results/Results';
+import "./assets/css/bootstrap.min.css";
+import "./assets/css/style.css";
+
 
 function App() {
 
@@ -14,6 +18,14 @@ function App() {
     {
       path: "/register",
       element: <Register/>
+    },
+    {
+      path: "/voting",
+      element: <Voting/>
+    },
+    {
+      path: "/result",
+      element: <Results/>
     },
   ]);
   

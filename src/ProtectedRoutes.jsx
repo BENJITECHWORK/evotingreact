@@ -13,7 +13,7 @@ const ProtectedRoutes = () => {
     <>
         <Outlet/>
         <GetNameModal
-            isOpen={!is_eligible}
+            isOpen={true}
             onSubmit={()=>{}}
             onClose={()=>{}}               
         />

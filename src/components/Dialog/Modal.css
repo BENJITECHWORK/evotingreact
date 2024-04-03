@@ -1,4 +1,4 @@
-.modal {
+dialog {
     max-width: 100%; /* Increased from 30rem to make the modal wider */
     max-height: 90vh; /* Increased from 80vh to make the modal taller */
     padding: 2rem;
@@ -12,20 +12,25 @@
     overflow-y: auto; /* Allows for scrolling if the content exceeds the max-height */
 }
 
-.modal::backdrop {
+
+/* .modal {
+    
+} */
+
+dialog::backdrop {
     background: hsl(0 0% 0% / 50%);
 }
 
-.modal-close-btn {
+/* .modal-close-btn {
     font-size: 0.75em;
     position: absolute;
     top: 0.25em;
     right: 0.25em;
-}
+} */
 
 /* Media query for responsiveness */
 @media screen and (max-width: 950px) {
-    .modal {
+    dialog {
         max-width: 95%; /* Adjusts the modal width to be 95% of the viewport width on smaller screens */
         max-height: 95vh; /* Adjusts the modal height to be 95% of the viewport height on smaller screens */
     }

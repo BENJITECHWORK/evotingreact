@@ -33,7 +33,6 @@ const GetNameModal = ({isOpen}) => {
         notify(data.message);
         window.location.reload()
       },
-
       onError: (error) => {
         console.log('error', error)
         errorNotification(error.message)
@@ -44,7 +43,7 @@ const GetNameModal = ({isOpen}) => {
   return (
     <Modal
         hasCloseBtn={false}
-        isOpen={isOpen}
+        isOpen={true}
         onClose={()=>{}}
      >
            <form onSubmit={handleSubmit(onSubmit)}>

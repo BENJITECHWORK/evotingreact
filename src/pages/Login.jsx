@@ -6,10 +6,12 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { loginApi } from "../apis/apifunctions/authApi";
 import { notify, errorNotification } from "../Toasts/toasts";
 import { schema } from "../Schemas/authSchema";
+import { useNavigate } from 'react-router-dom';
 import "../App.css";
 import logo from "../assets/logo.jpeg"
 
 const Login = () => {
+  const { navigate } = useNavigate();
   const {
     register,
     handleSubmit,
@@ -32,7 +34,9 @@ const Login = () => {
         localStorage.clear();
         localStorage.setItem("access_token", data.jwt_token);
         localStorage.setItem("user", JSON.stringify(data.user));
+        localStorage.setItem("is_eligible", false);
         notify("Login Successful");
+        navigate('/sample')
       },
 
       onError: (error) => {

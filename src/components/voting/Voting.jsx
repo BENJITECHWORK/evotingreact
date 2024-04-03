@@ -14,17 +14,17 @@ function Voting() {
     const [chairperson, setChairperson] = useState(0);
     const [vice_chairperson, setViceChairperson] = useState(0);
     const [others, setOthers] = useState({
-            general_secretary:0,
-            finance_secretary:0,
-            games_ent:0,
-            deputy_speaker:0,
-            project_cord:0,
-            deputy_project_cord:0,
-            speaker:0,
-            srwsn:0,
-            public_secretary :0
+        general_secretary: 0,
+        finance_secretary: 0,
+        games_ent: 0,
+        deputy_speaker: 0,
+        project_cord: 0,
+        deputy_project_cord: 0,
+        speaker: 0,
+        srwsn: 0,
+        public_secretary: 0
     });
-    const userDetails = localStorage.getItem('user')?JSON.parse(localStorage.getItem('user')):null
+    const userDetails = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
     console.log('userDetails', userDetails)
 
     const handleOthersVote = (position, candidateId) => {
@@ -33,30 +33,30 @@ function Voting() {
 
 
     const mutation = useMutation({
-        mutationFn:addVoteApi
+        mutationFn: addVoteApi
     });
-    
-  
+
+
     const onSubmit = (e) => {
         e.preventDefault();
-        if(chairperson === 0 || vice_chairperson === 0){
+        if (chairperson === 0 || vice_chairperson === 0) {
             errorNotification("Please vote for Chairperson and Vice Chairperson")
         } else {
             const data = {
-                userId:userDetails.id,
+                userId: userDetails.id,
                 chairperson,
                 vice_chairperson,
                 ...others
             }
-             mutation.mutate(data,{
+            mutation.mutate(data, {
                 onSuccess: (data) => {
                     notify(data.message)
-                 },
-                onError:(data) => {
-                  errorNotification(data.message)
+                },
+                onError: (data) => {
+                    errorNotification(data.message)
                 }
-             });
-           
+            });
+
         }
     }
     return (
@@ -183,10 +183,11 @@ function Voting() {
                         </div>
                     </div>
 
-                    <button type='submit' >
-                           {mutation.isPending ? "Voting ..." : "Vote Now"}
+                    <button className='btn btn-primary fw-bolder fs-8' type='submit'>
+                        {mutation.isPending ? "Voting ..." : "Vote Now"}
                     </button>
                 </div>
+
             </form>
 
 

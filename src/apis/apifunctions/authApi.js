@@ -4,12 +4,10 @@ import axiosIstance from "../axiosApi";
 export const loginApi = async(data) =>{
     try {
         const response = await axiosIstance.post('login/', data);
-        console.log('response', response.data.message)
-    
         return response.data;
-
     } catch (error) { 
-        if(error.response.status === 404){
+        console.log('error', error)
+        if(error?.response?.status === 404){
             throw new Error(error.response.data.message)
         }
         throw new Error("Network Error");
@@ -23,6 +21,7 @@ export const registerApi = async(data) =>{
         const response = await axiosIstance.post('register/', data);
         return response.data
     } catch (error) {
+        console.log('error', error)
         if(error.response.status === 404){
             throw new Error(error.response.data.message)
         }

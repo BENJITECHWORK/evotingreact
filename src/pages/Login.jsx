@@ -7,6 +7,7 @@ import { loginApi } from "../apis/apifunctions/authApi";
 import { notify, errorNotification } from "../Toasts/toasts";
 import { schema } from "../Schemas/authSchema";
 import "../App.css";
+import logo from "../assets/logo.jpeg"
 
 const Login = () => {
   const {
@@ -39,39 +40,40 @@ const Login = () => {
 
 
   return (
-    <div className="container">
-      <div className="login-form">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <header>Login</header>
-          <Input
-            className="input"
-            title="Email"
-            label="email"
-            register={register}
-            required
-            placeholder="Enter Email Address"
-            type="text"
-            errors={errors.email}
-          />
-          <Input
-            className="input"
-            title="Password"
-            label="password"
-            register={register}
-            required
-            placeholder="Enter Password"
-            type="password"
-            errors={errors.password}
-          />
-
-          <button
-            className={`primary-btn siguin ${mutation.isPending ? "disabled" : ""}`}
-            type="submit">
-            {mutation.isPending ? "Signing In ..." : "Sign In"}
-          </button>
-        </form>
-      </div>
+    <><div className="container">
+        <div className="login-form">
+        <div className="logo">
+      <img src={logo} alt='loading' />
     </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <header>Login</header>
+            <Input
+              className="input"
+              title="Email"
+              label="email"
+              register={register}
+              required
+              placeholder="Enter Email Address"
+              type="text"
+              errors={errors.email} />
+            <Input
+              className="input"
+              title="Password"
+              label="password"
+              register={register}
+              required
+              placeholder="Enter Password"
+              type="password"
+              errors={errors.password} />
+
+            <button
+              className={`primary-btn siguin ${mutation.isPending ? "disabled" : ""}`}
+              type="submit">
+              {mutation.isPending ? "Signing In ..." : "Sign In"}
+            </button>
+          </form>
+        </div>
+      </div></>
   )
 }
 

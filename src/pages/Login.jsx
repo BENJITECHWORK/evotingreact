@@ -1,4 +1,4 @@
-import React from 'react'
+import {useEffect} from 'react'
 import { useMutation } from '@tanstack/react-query'
 import Input from "../components/formComponents/Input";
 import { useForm } from 'react-hook-form'
@@ -11,7 +11,10 @@ import "../App.css";
 import logo from "../assets/logo.jpeg"
 
 const Login = () => {
-  const { navigate } = useNavigate();
+
+ 
+
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -35,8 +38,8 @@ const Login = () => {
         localStorage.setItem("access_token", data.jwt_token);
         localStorage.setItem("user", JSON.stringify(data.user));
         localStorage.setItem("is_eligible", false);
-        notify("Login Successful");
-        navigate('/vote')      },
+        notify("Login Successful");     
+      },
 
       onError: (error) => {
         errorNotification(error.message)
@@ -44,6 +47,11 @@ const Login = () => {
     });
   }
 
+  useEffect(() => {
+    if (mutation.isSuccess) {
+       navigate('/vote');
+    }
+   }, [mutation.isSuccess, navigate]);
 
   return (
     <><div className="container1">

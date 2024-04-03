@@ -22,7 +22,7 @@ function App() {
   
         <Routes>
           <Route path="/" element={<Auth />} />
-          <Route path="/*" element={<ProtectedRoutes />}>
+          <Route path="*" element={<ProtectedRoutes />}>
             <Route path="vote" element={<Voting />} />
             <Route path="sample" element={<Sample />} />
           </Route>

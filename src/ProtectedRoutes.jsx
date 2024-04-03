@@ -6,6 +6,7 @@ const ProtectedRoutes = () => {
   const token = localStorage.getItem("access_token")?localStorage.getItem("access_token"):null
   const is_eligible = localStorage.getItem("is_eligible")?localStorage.getItem("is_eligible"):false
 
+
   if (!token) {
     return <Navigate to="/" replace />;
 }
@@ -13,7 +14,7 @@ const ProtectedRoutes = () => {
     <>
         <Outlet/>
         <GetNameModal
-            isOpen={true}
+            isOpen={!is_eligible}
             onSubmit={()=>{}}
             onClose={()=>{}}               
         />

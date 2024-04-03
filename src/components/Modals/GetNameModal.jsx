@@ -9,6 +9,7 @@ import { tokenschema } from "../../Schemas/authSchema";
 import { useSelector, useDispatch } from 'react-redux';
 import { setIsEligible } from '../../redux/slices/authSlice';
 import Modal from "../Dialog/Modal";
+import "../../components/Modals/styles.css"
 
 const GetNameModal = ({isOpen}) => {
   const dispatch = useDispatch()
@@ -59,7 +60,7 @@ const GetNameModal = ({isOpen}) => {
                 type="text"
                 errors={errors.token}
             />
-             <button
+             <button class='btn btn-primary fw-bolder fs-8'
               className={`primary-btn siguin ${mutation.isPending ? "disabled" : ""}`}
               type="submit">
               {mutation.isPending ? "Verifying ..." : "Verify Token"}

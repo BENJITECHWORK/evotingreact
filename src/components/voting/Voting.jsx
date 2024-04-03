@@ -88,7 +88,7 @@ function Voting() {
                     </div>
                 </div>
 
-                <button>
+                <button class='btn btn-primary fw-bolder fs-8'>
                     Submit Vote
                 </button>
             </div>

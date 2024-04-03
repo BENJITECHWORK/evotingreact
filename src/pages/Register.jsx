@@ -36,6 +36,7 @@ const Register = () => {
     });
   }
   return (
+    <div className="container">
     <form onSubmit={handleSubmit(onSubmit)}>
        <Input 
             title = "Email"
@@ -89,6 +90,7 @@ const Register = () => {
            {mutation.isPending? "Signing Up ...":"Sign Up"}
         </button>
     </form>
+    </div>
   )
 }
 

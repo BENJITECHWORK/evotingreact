@@ -1,69 +1,77 @@
 import React from 'react'
 import { useMutation } from '@tanstack/react-query'
 import Input from "../components/formComponents/Input";
-import {useForm} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup"
 import { loginApi } from "../apis/apifunctions/authApi";
 import { notify, errorNotification } from "../Toasts/toasts";
 import { schema } from "../Schemas/authSchema";
+import "../App.css";
 
 const Login = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm({
-        mode: "onChange", //validate on each form change
-        resolver: yupResolver(schema),
-    })
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "onChange", //validate on each form change
+    resolver: yupResolver(schema),
+  })
 
-     /* useMutation Implementation */
-    const mutation = useMutation({
-        mutationFn:loginApi,
-    })
+  /* useMutation Implementation */
+  const mutation = useMutation({
+    mutationFn: loginApi,
+  })
 
 
   /* Handle Submit Logic */
   const onSubmit = (user_data) => {
-    mutation.mutate(user_data,{
-      onSuccess:(data)=>{
-         notify("Login Successful");
+    mutation.mutate(user_data, {
+      onSuccess: (data) => {
+        notify("Login Successful");
       },
 
-      onError: (error)=>{
-         errorNotification(error.message)
+      onError: (error) => {
+        errorNotification(error.message)
       }
     });
   }
 
-  
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-        <Input 
-            title = "Email"
+    <div className="container">
+      <div className="login-form">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <header>Login</header>
+          <Input
+            className="input"
+            title="Email"
             label="email"
             register={register}
             required
-            placeholder = "Enter Email Address"
-            type = "text"
+            placeholder="Enter Email Address"
+            type="text"
             errors={errors.email}
-        />  
-         <Input
+          />
+          <Input
+            className="input"
             title="Password"
             label="password"
             register={register}
             required
-            placeholder = "Enter Password"
-            type = "password"
+            placeholder="Enter Password"
+            type="password"
             errors={errors.password}
-        />
+          />
 
-        <button 
-            className={`primary-btn siguin ${mutation.isPending ? "disabled": ""}`}  
+          <button
+            className={`primary-btn siguin ${mutation.isPending ? "disabled" : ""}`}
             type="submit">
-           {mutation.isPending? "Signing In ...":"Sign In"}
-        </button>
-    </form>
+            {mutation.isPending ? "Signing In ..." : "Sign In"}
+          </button>
+        </form>
+      </div>
+    </div>
   )
 }
 

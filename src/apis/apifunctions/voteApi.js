@@ -27,10 +27,10 @@ export const verifyToken = async(data) =>{
         });
         return response.data;
     } catch (error) { 
-        console.log('error', error)
-        if(error.response.status === 404){
+      
+        if(error?.response?.status === 404){
             throw new Error(error.response.data.message)
-        }if(error.response.status === 401){
+        }if(error?.response?.status === 401){
             throw new Error(error.response.data.message)
         }
         throw new Error("Network Error");

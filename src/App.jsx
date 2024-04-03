@@ -8,6 +8,7 @@ import "./assets/css/bootstrap.min.css";
 import "./assets/css/style.css";
 
 import Sample from './pages/Sample';
+import ProtectedRoutes from './ProtectedRoutes';
 
 function App() {
 
@@ -21,6 +22,14 @@ function App() {
       element: <Register />
     },
     {
+      path:"/sample",
+      element:(
+        <ProtectedRoutes>
+          <Sample />
+        </ProtectedRoutes>
+      ) 
+    },
+    {
       path: "/voting",
       element: <Voting />
     },
@@ -28,10 +37,7 @@ function App() {
       path: "/result",
       element: <Results />
     },
-    {
-      path: "/sample",
-      element: <Sample />
-    }
+   
   ]);
 
 

@@ -1,93 +1,70 @@
 import React,{useEffect, useState} from 'react'
-import gooleIcon from '@/assets/icon.png'
-import appleIcon from '@/assets/apple.png'
-import Input from "@/componets/formComponents/Input";
-import {useForm} from 'react-hook-form'
+import { useMutation } from '@tanstack/react-query'
+import Input from "../formComponents/Input";
+import { useForm } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup"
-import { setFirstNameApi } from '@/api/apifunctions/userApi';
-import { useMutation } from "@tanstack/react-query";
-import { updateUserDetails } from "@/redux/features/authSlice";
-import { useDispatch } from "react-redux";
-import { notify, errorNotification } from "@/Toasts/toasts";
-import { Link, useNavigate } from "react-router-dom";
-import Modal from '../Dialog/Modal';
-import { firstLoginSchema } from '@/Schemas/authSchema';
-import './styles.css';
+import { verifyToken } from "../../apis/apifunctions/voteApi";
+import { notify, errorNotification } from "../../Toasts/toasts";
+import { tokenschema } from "../../Schemas/authSchema";
+import Modal from "../Dialog/Modal";
 
 const GetNameModal = ({isOpen}) => {
-        const dispatch = useDispatch();
-        const {
-            register,
-            handleSubmit,
-            formState: { errors },
-            setFocus
-        } = useForm({
-            mode: "onChange", //validate on each form change
-            resolver: yupResolver(firstLoginSchema),
-            defaultValues: {
-                firstName: "",
-                lastName: "",
-            },
-        })
+  const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm({
+        mode: "onChange", //validate on each form change
+        resolver: yupResolver(tokenschema),
+   })
 
-        /* useMutation Implementation */
-        const mutation = useMutation({
-            mutationFn:setFirstNameApi,
-            mutationKey:["setname"]
-        })
+      /* useMutation Implementation */
+  const mutation = useMutation({
+    mutationFn: verifyToken,
+  })
 
-        /* Handle Submit Logic */
-        const onSubmit = (user_data) => {
-            mutation.mutate(user_data,{
-            onSuccess:(data)=>{
-                notify(data.message);
-                dispatch(updateUserDetails({...data.data, is_first_login:false}))
-            },
-            onError: (error)=>{
-                errorNotification(error.message)
-            } });
-            console.log('user_data', user_data)
-        }
+
+  /* Handle Submit Logic */
+  const onSubmit = (user_data) => {
+    const user =localStorage.getItem('user')? JSON.parse(localStorage.getItem('user')):null
+    mutation.mutate({token:user_data.token, email:user.email}, {
+      onSuccess: (data) => {
+        localStorage.setItem('is_eligible',data.is_eligible)
+        notify(data.message);
+        window.location.reload()
+      },
+
+      onError: (error) => {
+        console.log('error', error)
+        errorNotification(error.message)
+      }
+    });
+  }
+
   return (
     <Modal
         hasCloseBtn={false}
         isOpen={isOpen}
         onClose={()=>{}}
-    >
-        <form className="auth_form" onSubmit={handleSubmit(onSubmit)}>
-            <div className="auth-group-text">
-                <h2>Please provide your name</h2>
-            </div>
-        <div className="content-feilds">
-            <div className="input-con">
-                <Input 
-                    title = "First Name"
-                    label="firstName"
-                    register={register}
-                    required
-                    placeholder = "Enter First Name"
-                    type = "text"
-                    errors={errors.firstName}
-                /> 
-            </div>
-            <div className="input-con">
-                <Input
-                    title="Last Name"
-                    label="lastName"
-                    register={register}
-                    required
-                    placeholder = "Enter Last Name"
-                    type = "text"
-                    errors={errors.lastName}
-                />
-            </div>
-            <button 
-                className={`primary-btn siguin ${mutation.isPending ? "disabled": ""}`}  
-                type="submit">
-                {mutation.isPending? "Saving ...":"Save"}
+     >
+           <form onSubmit={handleSubmit(onSubmit)}>
+            <Input
+                className="input"
+                title="Token"
+                label="token"
+                register={register}
+                required
+                placeholder="Enter Token"
+                type="text"
+                errors={errors.token}
+            />
+             <button
+              className={`primary-btn siguin ${mutation.isPending ? "disabled" : ""}`}
+              type="submit">
+              {mutation.isPending ? "Verifying ..." : "Verify Token"}
             </button>
-        </div>
-    </form>
+          </form>
+  
   </Modal>
   )
 }

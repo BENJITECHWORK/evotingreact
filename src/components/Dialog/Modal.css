@@ -1,0 +1,32 @@
+.modal {
+    max-width: 100%; /* Increased from 30rem to make the modal wider */
+    max-height: 90vh; /* Increased from 80vh to make the modal taller */
+    padding: 2rem;
+    border: 0;
+    border-radius: 0.5rem;
+    position: fixed; /* Ensures the modal is centered in the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjusts the modal to ensure it's centered based on its own dimensions */
+    box-shadow: hsl(0 0% 0% / 10%) 0 0 0.5rem 0.25rem;
+    overflow-y: auto; /* Allows for scrolling if the content exceeds the max-height */
+}
+
+.modal::backdrop {
+    background: hsl(0 0% 0% / 50%);
+}
+
+.modal-close-btn {
+    font-size: 0.75em;
+    position: absolute;
+    top: 0.25em;
+    right: 0.25em;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 950px) {
+    .modal {
+        max-width: 95%; /* Adjusts the modal width to be 95% of the viewport width on smaller screens */
+        max-height: 95vh; /* Adjusts the modal height to be 95% of the viewport height on smaller screens */
+    }
+}

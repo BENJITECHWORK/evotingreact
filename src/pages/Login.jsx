@@ -29,6 +29,7 @@ const Login = () => {
   const onSubmit = (user_data) => {
     mutation.mutate(user_data, {
       onSuccess: (data) => {
+        localStorage.clear();
         localStorage.setItem("access_token", data.jwt_token);
         localStorage.setItem("user", JSON.stringify(data.user));
         notify("Login Successful");
@@ -42,7 +43,8 @@ const Login = () => {
 
 
   return (
-    <><div className="container">
+    <>
+    <div className="container">
         <div className="login-form">
         <div className="logo">
       <img src={logo} alt='loading' />

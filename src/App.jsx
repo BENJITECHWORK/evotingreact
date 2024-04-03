@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import './App.css'
 import Register from './pages/Register';
 import Sample from './pages/Sample';
+import ProtectedRoutes from './ProtectedRoutes';
 
 function App() {
 
@@ -18,7 +19,11 @@ function App() {
     },
     {
       path:"/sample",
-      element:<Sample/>    
+      element:(
+        <ProtectedRoutes>
+          <Sample />
+        </ProtectedRoutes>
+      ) 
     }
   ]);
   

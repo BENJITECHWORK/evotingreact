@@ -1,5 +1,6 @@
 import React from 'react'
-import Header from '../header/Header';
+import Header from '../layouts/Header';
+import Member1 from '../../assets/images/testimonial/member-03.jpg';
 
 function Results() {
   return (
@@ -14,7 +15,7 @@ function Results() {
                 <div class="col-md-6 mb-4">
                    <div class="row shado-md p-2 m-0 rounded shadow-md bg-white">
                        <div class="col-md-3">
-                             <img class="rounded-pill max-130 p-2" src="assets/images/testimonial/member-01.jpg" alt="" />
+                             <img class="rounded-pill max-130 p-2" src={Member1} alt="" />
                        </div>
                        <div class="col-md-9 align-self-center">
                            <h4 class="mt-3 fs-5 mb-1 fw-bold">James Anderson</h4>
@@ -29,7 +30,7 @@ function Results() {
                 <div class="col-md-6 mb-4">
                    <div class="row shado-md p-2 m-0 rounded shadow-md bg-white">
                        <div class="col-md-3">
-                             <img class="rounded-pill max-130 p-2" src="assets/images/testimonial/member-02.jpg" alt="" />
+                             <img class="rounded-pill max-130 p-2" src={Member1} alt="" />
                        </div>
                        <div class="col-md-9 align-self-center">
                            <h4 class="mt-3 fs-5 mb-1 fw-bold">Arun Kumar</h4>
@@ -44,7 +45,7 @@ function Results() {
                 <div class="col-md-6 mb-4">
                    <div class="row shado-md p-2 m-0 rounded shadow-md bg-white">
                        <div class="col-md-3">
-                             <img class="rounded-pill max-130 p-2" src="assets/images/testimonial/member-03.jpg" alt="" />
+                             <img class="rounded-pill max-130 p-2" src={Member1} alt="" />
                        </div>
                        <div class="col-md-9 align-self-center">
                            <h4 class="mt-3 fs-5 mb-1 fw-bold">Pream Nath</h4>
@@ -58,7 +59,7 @@ function Results() {
                 <div class="col-md-6 mb-4">
                    <div class="row shado-md p-2 m-0 rounded shadow-md bg-white">
                        <div class="col-md-3">
-                             <img class="rounded-pill max-130 p-2" src="assets/images/testimonial/member-04.jpg" alt="" />
+                             <img class="rounded-pill max-130 p-2" src={Member1} alt="" />
                        </div>
                        <div class="col-md-9 align-self-center">
                            <h4 class="mt-3 fs-5 mb-1 fw-bold">Reena Anath</h4>
@@ -73,7 +74,7 @@ function Results() {
                  <div class="col-md-6 mb-4">
                    <div class="row shado-md p-2 m-0 rounded shadow-md bg-white">
                        <div class="col-md-3">
-                             <img class="rounded-pill max-130 p-2" src="assets/images/testimonial/member-05.png" alt="" />
+                             <img class="rounded-pill max-130 p-2" src={Member1} alt="" />
                        </div>
                        <div class="col-md-9 align-self-center">
                            <h4 class="mt-3 fs-5 mb-1 fw-bold">Allen Shory</h4>
@@ -88,7 +89,7 @@ function Results() {
                  <div class="col-md-6 mb-4">
                    <div class="row shado-md p-2 m-0 rounded shadow-md bg-white">
                        <div class="col-md-3">
-                             <img class="rounded-pill max-130 p-2" src="assets/images/testimonial/member-06.png" alt="" />
+                             <img class="rounded-pill max-130 p-2" src={Member1} alt="" />
                        </div>
                        <div class="col-md-9 align-self-center">
                            <h4 class="mt-3 fs-5 mb-1 fw-bold">Aney Kumm</h4>

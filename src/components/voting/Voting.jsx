@@ -25,8 +25,6 @@ function Voting() {
         public_secretary: 0
     });
     const userDetails = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
-    console.log('userDetails', userDetails)
-
     const handleOthersVote = (position, candidateId) => {
         setOthers(prevOthers => ({ ...prevOthers, [position]: candidateId }));
     };
@@ -78,9 +76,11 @@ function Voting() {
                                 <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary fw-bolder fs-8">View Manifesto</button>
                                 <button
                                     type="button"
-                                    class="btn btn-danger fw-bolder px-4 ms-2 fs-8"
+                                    className={`btn ${chairperson === 1 ? 'btn-success' : 'btn-danger'} fw-bolder px-4 ms-2 fs-8`}
                                     onClick={() => setChairperson(1)}
-                                >Vote</button>
+                                >
+                                    {chairperson === 1 ? "Voted" : "Vote"}
+                                </button>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6">
@@ -92,9 +92,11 @@ function Voting() {
                                 <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary fw-bolder fs-8">View Manifesto</button>
                                 <button
                                     type="button"
-                                    class="btn btn-danger fw-bolder px-4 ms-2 fs-8"
+                                    class={`btn ${chairperson === 2 ? 'btn-success' : 'btn-danger'} fw-bolder px-4 ms-2 fs-8`}
                                     onClick={() => setChairperson(2)}
-                                >Vote</button>
+                                >
+                                    {chairperson === 2 ? "Voted" : "Vote"}
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -114,9 +116,11 @@ function Voting() {
                                 <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary fw-bolder fs-8">View Manifesto</button>
                                 <button
                                     type="button"
-                                    class="btn btn-danger fw-bolder px-4 ms-2 fs-8"
+                                    class={`btn ${vice_chairperson === 1 ? 'btn-success' : 'btn-danger'} fw-bolder px-4 ms-2 fs-8`}
                                     onClick={() => setViceChairperson(1)}
-                                >Vote</button>
+                                >
+                                    {vice_chairperson === 1 ? "Voted" : "Vote"}
+                                </button>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6">
@@ -128,9 +132,11 @@ function Voting() {
                                 <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary fw-bolder fs-8">View Manifesto</button>
                                 <button
                                     type="button"
-                                    class="btn btn-danger fw-bolder px-4 ms-2 fs-8"
+                                    class={`btn ${vice_chairperson === 2? 'btn-success' : 'btn-danger'} fw-bolder px-4 ms-2 fs-8`}
                                     onClick={() => setViceChairperson(2)}
-                                >Vote</button>
+                                >
+                                    {vice_chairperson === 2 ? "Voted" : "Vote"}
+                                </button>
                             </div>
                         </div>
                     </div>

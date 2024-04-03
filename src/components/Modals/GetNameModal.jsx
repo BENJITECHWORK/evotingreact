@@ -31,7 +31,7 @@ const GetNameModal = ({isOpen}) => {
       onSuccess: (data) => {
         localStorage.setItem('is_eligible',data.is_eligible)
         notify(data.message);
-        window.location.reload()
+        // window.location.reload()
       },
       onError: (error) => {
         console.log('error', error)

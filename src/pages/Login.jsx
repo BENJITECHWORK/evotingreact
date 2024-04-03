@@ -36,7 +36,7 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(data.user));
         localStorage.setItem("is_eligible", false);
         notify("Login Successful");
-        navigate('/sample')
+        navigate('/vote')
       },
 
       onError: (error) => {

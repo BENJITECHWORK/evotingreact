@@ -16,9 +16,9 @@ function Header() {
                         </div>
                         <div id="menu" className="col-lg-6 d-none d-lg-block">
                             <ul className="float-end mul d-inline-block">
-                                <li className="float-md-start px-4 pe-1 pt-4">
+                                {/* <li className="float-md-start px-4 pe-1 pt-4">
                                     <Link to="/result" className="fw-bold fs-8 text-primary">View Result</Link>
-                                </li>
+                                </li> */}
 
                                 <li className="float-md-start px-4 pe-1 py-3">
                                     <button className="btn fw-bold fs-8 btn-primary">Logout</button>

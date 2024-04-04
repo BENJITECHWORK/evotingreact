@@ -12,6 +12,7 @@ import Modal from "../Dialog/Modal";
 import "../../components/Modals/styles.css"
 
 const GetNameModal = ({ isOpen }) => {
+  const is_eligible = useSelector(state => state.auth.is_eligible);
   const dispatch = useDispatch()
   const {
     register,
@@ -33,12 +34,13 @@ const GetNameModal = ({ isOpen }) => {
     const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
     mutation.mutate({ token: user_data.token, email: user.email }, {
       onSuccess: (data) => {
-        dispatch(setIsEligible(false))
+        dispatch(setIsEligible(!is_eligible))
         notify(data.message);
       },
       onError: (error) => {
-        console.log('errorT', error)
-        errorNotification(error.message)
+        console.log('errorT', error.message)
+        // errorNotification(error.message)
+        alert(`Vote Token Expired! ${error.message}! Login to get a new token`)
       }
     });
   }

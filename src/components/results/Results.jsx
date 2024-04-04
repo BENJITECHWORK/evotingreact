@@ -23,7 +23,7 @@ function Results() {
             <Header />
             <div class="container py-5 big-padding">
                 <div class="row section-title">
-                    <h2 class="fs-5 text-center">Mufasa Result Sheet</h2>
+                    <h2 class="fs-5 text-center">MUFASA RESULT SHEET</h2>
                     <p class="fs-6 text-center">TOTAL VOTERS:  {data.total_votes} <i>Voters</i></p>
                 </div>
                 <div class="row mb-5">

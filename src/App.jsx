@@ -26,11 +26,8 @@ function App() {
           <Route path="/home" element={<ProtectedRoutes />}>
             <Route path="vote" element={<Voting />} />
             <Route path="sample" element={<Sample />} />
-            <Route path='results' element={<Results/>}/>
+            {/* <Route path='results' element={<Results/>}/> */}
           </Route>
-            {/* <Route path="/vote" element={<Voting />} />
-            <Route path="/sample" element={<Sample />} />
-            <Route path='/results' element={<Results/>}/> */}
         </Routes>
    
     </>

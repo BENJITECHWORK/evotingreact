@@ -85,7 +85,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member13} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">SYAKENGWA BRIAN</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">ChairPerson</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">ChairPerson</span></h6>
                                 <button
                                     type="button"
                                     className={`btn ${chairperson === 1 ? 'btn-success' : 'btn-danger'} fw-bolder px-4 ms-2 fs-8`}
@@ -99,7 +99,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member3} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">NUWAMANYA AIVAN</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">ChairPerson</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">ChairPerson</span></h6>
 
                                 <button
                                     type="button"
@@ -115,14 +115,13 @@ function Voting() {
                     {/* Vice Chairperson */}
                     <div class="row section-title">
                         <h2 class="fs-4">Vice ChairPerson</h2>
-                        <p>Lorem ipsum dolor sit amet, </p>
                     </div>
                     <div class="row">
                         <div className="col-lg-4 col-md-6">
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member12} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">MUGEMA BRIAN</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Vice Chairperson</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">Vice Chairperson</span></h6>
                                 <button
                                     type="button"
                                     class={`btn ${vice_chairperson === 1 ? 'btn-success' : 'btn-danger'} fw-bolder px-4 ms-2 fs-8`}
@@ -136,7 +135,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member6} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">MAZIMA WINNIE</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Vice Chairperson</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">Vice Chairperson</span></h6>
                                 <button
                                     type="button"
                                     class={`btn ${vice_chairperson === 2 ? 'btn-success' : 'btn-danger'} fw-bolder px-4 ms-2 fs-8`}
@@ -158,7 +157,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member8} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">MUGISHA JOSHUA</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Speaker</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">Speaker</span></h6>
                                 <button
                                     type="button"
                                     class={`btn ${others.speaker === 1 ? 'btn-success' : 'btn-danger'} fw-bolder px-4 ms-2 fs-8`}
@@ -172,7 +171,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member4} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">NAMULONDO FAITH</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Deputy Speaker</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">Deputy Speaker</span></h6>
                                 <button
                                     type="button"
                                     onClick={() => handleOthersVote('deputy_speaker')}
@@ -186,7 +185,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member11} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">ARYAMWIJUKA NIMLORD</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Finance Secretary</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">Finance Secretary</span></h6>
                                 <button
                                     type="button"
                                     onClick={() => handleOthersVote('finance_secretary')}
@@ -199,7 +198,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member9} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold"> ABER ZITA LOURDES</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Public Secretary</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">Public Secretary</span></h6>
                                 <button
                                     type="button"
                                     onClick={() => handleOthersVote('public_secretary')}
@@ -213,7 +212,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member1} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">KATITI MORIS MUGISHA</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">General Secretary</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">General Secretary</span></h6>
                                 <button
                                     type="button"
                                     onClick={() => handleOthersVote('general_secretary')}
@@ -226,7 +225,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member2} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">LWANGA ELYIN MUTEBI</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Games and Entertainment</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">Games and Entertainment</span></h6>
                                 <button
                                     type="button"
                                     onClick={() => handleOthersVote('games_ent')}
@@ -240,7 +239,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member5} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">NUHIIRE FRANK</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Projects Cordinator</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">Projects Cordinator</span></h6>
                                 <button
                                     type="button"
                                     onClick={() => handleOthersVote('project_cord')}
@@ -254,7 +253,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member7} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">TAYEBWA SANDRA</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Deputy Projects Cordinator</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">Deputy Projects Cordinator</span></h6>
                                 <button
                                     type="button"
                                     onClick={() => handleOthersVote('deputy_project_cord')}
@@ -268,7 +267,7 @@ function Voting() {
                             <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
                                 <img class="rounded-pill shadow-md p-2" src={Member10} alt="" />
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">BUKULU PAUL</h4>
-                                <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">REPRESENTATIVE OF PERSONS WITH SPECIAL NEEDS</span></h6>
+                                <h6 class="fs-7">Running to Be: <span class="text-primary fw-bold">REPRESENTATIVE OF PERSONS WITH SPECIAL NEEDS</span></h6>
                                 <button
                                     type="button"
                                     onClick={() => handleOthersVote('srwsn')}

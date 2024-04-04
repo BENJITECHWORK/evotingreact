@@ -24,7 +24,7 @@ function Results() {
             <div class="container py-5 big-padding">
                 <div class="row section-title">
                     <h2 class="fs-5 text-center">Mufasa Result Sheet</h2>
-                    <p class="fs-6 text-center">TOTAL VOTERS:  {data.total_votes}</p>
+                    <p class="fs-6 text-center">TOTAL VOTERS:  {data.total_votes} <i>Voters</i></p>
                 </div>
                 <div class="row mb-5">
                     <div class="col-md-6 mb-4">
@@ -54,7 +54,7 @@ function Results() {
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">NUWAMANYA AIVAN(Chairperson)</h4>
                                 <p class="fs-8 mb-2 fw-bold">Votes : {data?.results.chairpersons?.NW}</p>
                                 <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label" style={{ width: `${((data?.results.chairpersons?.SB / data.total_votes) * 100).toFixed(2)}%` }}
+                                    <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label" style={{ width: `${((data?.results.chairpersons?.NW / data.total_votes) * 100).toFixed(2)}%` }}
                                         aria-valuenow={`${((data?.results.chairpersons?.NW/ data.total_votes) * 100).toFixed(2)}%`} aria-valuemin="0" aria-valuemax="100">
                                         {((data?.results.chairpersons?.NW / data?.total_votes) * 100).toFixed(2)}%
                                     </div>
@@ -90,8 +90,8 @@ function Results() {
                                 <h4 class="mt-3 fs-5 mb-1 fw-bold">MAZIMA WINNIE(Vice Chairperson)</h4>
                                 <p class="fs-8 mb-2 fw-bold">Votes : {data?.results.vice_chairperson?.MW}</p>
                                 <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label" style={{ width: `${((data?.results.vice_chairperson?.NW / data.total_votes) * 100).toFixed(2)}%` }}
-                                        aria-valuenow={`${((data?.results.vice_chairperson?.NW/ data.total_votes) * 100).toFixed(2)}%`} aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label" style={{ width: `${((data?.results.vice_chairperson?.MW / data.total_votes) * 100).toFixed(2)}%` }}
+                                        aria-valuenow={`${((data?.results.vice_chairperson?.MW/ data.total_votes) * 100).toFixed(2)}%`} aria-valuemin="0" aria-valuemax="100">
                                         {((data?.results.vice_chairperson?.MW / data?.total_votes) * 100).toFixed(2)}%
                                     </div>
                                 </div>

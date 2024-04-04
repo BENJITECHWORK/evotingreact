@@ -7,6 +7,7 @@ import Member13 from '../../assets/members/member-13.jpeg';
 import Member3 from '../../assets/members/member-03.jpeg';
 import Member12 from '../../assets/members/member-12.jpeg';
 import Member6 from '../../assets/members/member-06.jpeg';
+import Table from './Table';
 
 function Results() {
     const { isLoading, error, data } = useQuery({
@@ -99,7 +100,9 @@ function Results() {
                         </div>
                     </div>
                 </div>
+            <Table data={data}/>
             </div>
+
         </div>
     )
 }

@@ -15,11 +15,11 @@ const ProtectedRoutes = () => {
   return (
     <>
         <Outlet/>
-        <GetNameModal
+        {/* <GetNameModal
             isOpen={is_eligible}
             onSubmit={()=>{}}
             onClose={()=>{}}               
-        />
+        /> */}
     </>
    
   )

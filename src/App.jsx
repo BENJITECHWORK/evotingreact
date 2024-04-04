@@ -24,10 +24,11 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<ProtectedRoutes />}>
-            <Route path="vote" element={<Voting />} />
-            <Route path="sample" element={<Sample />} />
-            {/* <Route path='results' element={<Results/>}/> */}
+            {/* <Route path="vote" element={<Voting />} />
+            <Route path="sample" element={<Sample />} /> */}
+            <Route path='results' element={<Results/>}/>
           </Route>
+          <Route path='results' element={<Results/>}/>
         </Routes>
    
     </>

@@ -56,3 +56,22 @@ export const addVoteApi = async(data) =>{
         throw new Error("Network Error");
     } 
 }
+
+/* Get Query Results */
+
+
+export const getTotalVotes = async() =>{  
+    try {
+        const response = await axiosIstance.get('vote/results');
+        return response.data;
+    } catch (error) { 
+        console.log('error', error)
+        if(error?.response?.status === 404){
+            console.log('error', error.response)
+            throw new Error(error.response.data.message)
+        }if(error?.response?.status === 401){
+            throw new Error(error.response.data.message)
+        }
+        throw new Error("Network Error");
+    } 
+}

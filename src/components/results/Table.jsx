@@ -21,7 +21,7 @@ const Table = ({ data }) => {
                 <thead className="bg-light">
                     <tr>
                         <th>Candidate & Position</th>
-                        <th>Total votes</th>
+                        {/* <th>Total votes</th> */}
                         <th>Percentage (%)</th>
                     </tr>
                 </thead>
@@ -41,9 +41,9 @@ const Table = ({ data }) => {
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        {/* <td>
                             <p className="fw-normal mb-1">{data.results.other_positions.speaker}</p>
-                        </td>
+                        </td> */}
                         <td>{((data?.results.other_positions.speaker / data?.total_votes) * 100).toFixed(2)}</td>
                     </tr>
 
@@ -62,9 +62,9 @@ const Table = ({ data }) => {
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        {/* <td>
                             <p className="fw-normal mb-1">{data.results.other_positions.deputy_speaker}</p>
-                        </td>
+                        </td> */}
                         <td>{((data?.results.other_positions.deputy_speaker / data?.total_votes) * 100).toFixed(2)}</td>
                     </tr>
 
@@ -83,9 +83,9 @@ const Table = ({ data }) => {
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        {/* <td>
                             <p className="fw-normal mb-1">{data.results.other_positions.finance_secretary}</p>
-                        </td>
+                        </td> */}
                         <td>{((data?.results.other_positions.finance_secretary / data?.total_votes) * 100).toFixed(2)}</td>
                     </tr>
 
@@ -104,9 +104,9 @@ const Table = ({ data }) => {
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        {/* <td>
                             <p className="fw-normal mb-1">{data.results.other_positions.public_secretary}</p>
-                        </td>
+                        </td> */}
                         <td>{((data?.results.other_positions.public_secretary / data?.total_votes) * 100).toFixed(2)}</td>
                     </tr>
 
@@ -125,9 +125,9 @@ const Table = ({ data }) => {
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        {/* <td>
                             <p className="fw-normal mb-1">{data.results.other_positions.general_secretary}</p>
-                        </td>
+                        </td> */}
                         <td>{((data?.results.other_positions.general_secretary / data?.total_votes) * 100).toFixed(2)}</td>
                     </tr>
 
@@ -147,9 +147,9 @@ const Table = ({ data }) => {
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        {/* <td>
                             <p className="fw-normal mb-1">{data.results.other_positions.games_ent}</p>
-                        </td>
+                        </td> */}
                         <td>{((data?.results.other_positions.games_ent / data?.total_votes) * 100).toFixed(2)}</td>
                     </tr>
 
@@ -168,9 +168,9 @@ const Table = ({ data }) => {
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        {/* <td>
                             <p className="fw-normal mb-1">{data.results.other_positions.project_cord}</p>
-                        </td>
+                        </td> */}
                         <td>{((data?.results.other_positions.project_cord / data?.total_votes) * 100).toFixed(2)}</td>
                     </tr>
 
@@ -189,9 +189,9 @@ const Table = ({ data }) => {
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        {/* <td>
                             <p className="fw-normal mb-1">{data.results.other_positions.deputy_project_cord}</p>
-                        </td>
+                        </td> */}
                         <td>{((data?.results.other_positions.deputy_project_cord / data?.total_votes) * 100).toFixed(2)}</td>
                     </tr>
 
@@ -210,9 +210,9 @@ const Table = ({ data }) => {
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        {/* <td>
                             <p className="fw-normal mb-1">{data.results.other_positions.srwsn}</p>
-                        </td>
+                        </td> */}
                         <td>{((data?.results.other_positions.srwsn / data?.total_votes) * 100).toFixed(2)}</td>
                     </tr>
 
